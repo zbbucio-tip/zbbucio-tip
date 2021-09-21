@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  become: true
+  tasks:   
+
+  - name: install vsftpd
+    apt:
+      name:
+        - focal
+      state: latest
+    when: ansible_distribution == "Ubuntu"
